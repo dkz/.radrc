@@ -35,6 +35,8 @@ set laststatus=2
 set foldcolumn=1
 set nowrap
 
+set statusline=\ %F%m%r%h\ %w\ (%r%{getcwd()}%h)\%=%l:%c\ \ 
+
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='badwolf'
 let g:airline_section_c='%<%f%m (%{getcwd()})'
