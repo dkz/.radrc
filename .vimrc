@@ -1,6 +1,8 @@
 set nocompatible
 filetype off
 
+let $BASH_ENV="~/.vim/.bashenv"
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 

@@ -1,0 +1,4 @@
+shopt -s expand_aliases
+
+alias xcopy="xclip -in -selection clipboard"
+alias xpaste="xclip -out -selection clipboard"
