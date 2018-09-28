@@ -12,6 +12,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+if !empty(glob('~/.vim/.bundlerc.local'))
+  source ~/.vim/.bundlerc.local
+endif
+
 call vundle#end()
 filetype plugin indent on
 
@@ -47,3 +51,7 @@ set omnifunc=syntaxcomplete#Complete
 
 map <space> /
 map <c-space> ?
+
+if !empty(glob('~/.vim/.vimrc.local'))
+  source ~/.vim/.vimrc.local
+endif
