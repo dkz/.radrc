@@ -57,9 +57,6 @@ let g:airline_section_c='%<%f%m (%{getcwd()})'
 
 set omnifunc=syntaxcomplete#Complete
 
-map <space> /
-map <c-space> ?
-
 if !empty(glob('~/.vim/.vimrc.local'))
   source ~/.vim/.vimrc.local
 endif
