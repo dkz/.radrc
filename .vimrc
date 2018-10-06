@@ -1,22 +1,30 @@
 set nocompatible
 filetype off
 
-let $BASH_ENV="~/.vim/.bashenv"
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-if !empty(glob('~/.vim/.bundlerc.local'))
-  source ~/.vim/.bundlerc.local
+if !empty(glob('~/.vim/.bashenv'))
+  let $BASH_ENV="~/.vim/.bashenv"
 endif
 
-call vundle#end()
+function VundleInstalled()
+  return !empty(glob('~/.vim/bundle/Vundle.vim'))
+endfunction
+
+if VundleInstalled()
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-surround'
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
+
+  if !empty(glob('~/.vim/.bundlerc.local'))
+    source ~/.vim/.bundlerc.local
+  endif
+
+  call vundle#end()
+endif
 filetype plugin indent on
 
 set autoindent
