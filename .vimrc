@@ -49,6 +49,7 @@ set laststatus=2
 set foldcolumn=1
 set nowrap
 set hidden
+set background=dark
 
 set statusline=\ %F%m%r%h\ %w\ (%r%{getcwd()}%h)\%=%l:%c\ \ 
 
