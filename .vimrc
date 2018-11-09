@@ -16,6 +16,8 @@ if VundleInstalled()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
+  Plugin 'tmhedberg/matchit'
+  Plugin 'easymotion/vim-easymotion'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
 
