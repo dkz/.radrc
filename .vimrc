@@ -61,6 +61,7 @@ let g:airline_section_c='%<%f%m (%{getcwd()})'
 
 set omnifunc=syntaxcomplete#Complete
 
+source ~/.vim/.keymap.vim
 if !empty(glob('~/.vim/.vimrc.local'))
   source ~/.vim/.vimrc.local
 endif
