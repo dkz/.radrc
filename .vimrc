@@ -53,6 +53,9 @@ set nowrap
 set hidden
 set background=dark
 
+set splitright
+set splitbelow
+
 set statusline=\ %F%m%r%h\ %w\ (%r%{getcwd()}%h)\%=%l:%c\ \ 
 
 let g:airline#extensions#tabline#enabled=1
