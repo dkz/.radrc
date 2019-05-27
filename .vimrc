@@ -53,6 +53,16 @@ set nowrap
 set hidden
 set background=dark
 
+function SwitchColors()
+  if &background == "dark"
+    set background=light
+  else
+    set background=dark
+  endif
+endfunction
+
+nmap <f2> :call SwitchColors()<CR>
+
 set splitright
 set splitbelow
 
