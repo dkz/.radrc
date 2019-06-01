@@ -11,7 +11,9 @@ ln -s $HOME/.vim/.vimrc $HOME/.vimrc
 echo "Plugin 'rakr/vim-one'" >> $HOME/.vim/.bundlerc.local
 echo "call EnableKeymap()
 if VundleInstalled()
-  colorscheme one
+  if !empty(glob('~/.vim/bundle/vim-one'))
+    colorscheme one
+    let g:airline_theme='one'
+  endif
   set background=dark
-  let g:airline_theme='one'
 endif" >> $HOME/.vim/.vimrc.local
