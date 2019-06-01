@@ -8,10 +8,10 @@ git -C $HOME/.vim submodule init
 git -C $HOME/.vim submodule update
 ln -s $HOME/.vim/.vimrc $HOME/.vimrc
 
-echo "Plugin 'rakr/vim-one'" >> $HOME/.vim/.bundlerc.local1
+echo "Plugin 'rakr/vim-one'" >> $HOME/.vim/.bundlerc.local
 echo "call EnableKeymap()
 if VundleInstalled()
   colorscheme one
   set background=dark
   let g:airline_theme='one'
-endif" >> $HOME/.vim/.vimrc.local1
+endif" >> $HOME/.vim/.vimrc.local
