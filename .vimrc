@@ -30,6 +30,7 @@ endif
 filetype plugin indent on
 
 set autoindent
+set autochdir
 set smartindent
 set relativenumber
 set tabstop=2
