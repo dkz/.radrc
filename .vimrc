@@ -53,6 +53,7 @@ set foldcolumn=1
 set nowrap
 set hidden
 set background=dark
+set selection=old
 
 function SwitchColors()
   if &background == "dark"
