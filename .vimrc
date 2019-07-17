@@ -20,6 +20,7 @@ if VundleInstalled()
   Plugin 'easymotion/vim-easymotion'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'kshenoy/vim-signature'
 
   if !empty(glob('~/.vim/.bundlerc.local'))
     source ~/.vim/.bundlerc.local
