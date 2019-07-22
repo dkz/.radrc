@@ -62,6 +62,9 @@ function SwitchColors()
   else
     set background=dark
   endif
+  if exists("*SwitchColorsHook")
+    call SwitchColorsHook(&background)
+  endif
 endfunction
 
 nmap <f2> :call SwitchColors()<CR>
