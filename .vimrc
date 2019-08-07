@@ -52,10 +52,7 @@ set nowrap
 set hidden
 set background=dark
 set selection=old
-
-" Causes inresponsiveness on slow terminals.
-" Can be enabled in .vimrc.local config if required.
-"set lazyredraw
+set lazyredraw
 
 hi FoldColumn ctermbg=LightGray
 hi SignColumn ctermbg=LightGray
