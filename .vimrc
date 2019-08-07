@@ -53,7 +53,15 @@ set hidden
 set background=dark
 set selection=old
 
+" Causes inresponsiveness on slow terminals.
+" Can be enabled in .vimrc.local config if required.
 "set lazyredraw
+
+hi FoldColumn ctermbg=LightGray
+hi SignColumn ctermbg=LightGray
+hi SignatureMarkText ctermbg=LightGray
+hi SignatureMarkText ctermfg=Black
+hi SignatureMarkText cterm=bold,underline
 
 function SwitchColors()
   if &background == "dark"
@@ -71,7 +79,7 @@ nmap <f2> :call SwitchColors()<CR>
 set splitright
 set splitbelow
 
-set statusline=\ %F%m%r%h\ %w\ (%r%{getcwd()}%h)\%=%l:%c\ \ 
+set statusline=\ %F%m%r%h\ %w\ (%r%{getcwd()}%h)\%=%y\ %3l:%2c\ \ 
 
 set omnifunc=syntaxcomplete#Complete
 
