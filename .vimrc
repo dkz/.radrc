@@ -14,12 +14,10 @@ if VundleInstalled()
   call vundle#begin()
 
   Plugin 'VundleVim/Vundle.vim'
-  Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-repeat'
   Plugin 'tmhedberg/matchit'
   Plugin 'easymotion/vim-easymotion'
-  Plugin 'vim-airline/vim-airline'
-  Plugin 'vim-airline/vim-airline-themes'
   Plugin 'kshenoy/vim-signature'
 
   if !empty(glob('~/.vim/.bundlerc.local'))
@@ -42,7 +40,6 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set lazyredraw
 set nobackup
 set noswapfile
 set nowb
@@ -55,6 +52,8 @@ set nowrap
 set hidden
 set background=dark
 set selection=old
+
+"set lazyredraw
 
 function SwitchColors()
   if &background == "dark"
@@ -73,10 +72,6 @@ set splitright
 set splitbelow
 
 set statusline=\ %F%m%r%h\ %w\ (%r%{getcwd()}%h)\%=%l:%c\ \ 
-
-let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='badwolf'
-let g:airline_section_c='%<%f%m (%{getcwd()})'
 
 set omnifunc=syntaxcomplete#Complete
 
