@@ -1,7 +1,9 @@
 set nocompatible
 filetype off
 
-if !empty(glob('~/.vim/.bashenv'))
+if !empty(glob('~/.vim/.bashenv.local'))
+  let $BASH_ENV="~/.vim/.bashenv.local"
+elseif !empty(glob('~/.vim/.bashenv'))
   let $BASH_ENV="~/.vim/.bashenv"
 endif
 
