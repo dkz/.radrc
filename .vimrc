@@ -56,11 +56,14 @@ set background=dark
 set selection=old
 set lazyredraw
 
+hi VertSplit ctermbg=LightGray ctermfg=LightGray
 hi FoldColumn ctermbg=LightGray
 hi SignColumn ctermbg=LightGray
 hi SignatureMarkText ctermbg=LightGray
 hi SignatureMarkText ctermfg=Black
 hi SignatureMarkText cterm=bold,underline
+
+set fillchars+=vert:\ 
 
 function SwitchColors()
   if &background == "dark"
