@@ -1,7 +1,7 @@
-#! /bin/sh -
+#!/bin/sh
 
 ask () {
-  local prompt=$@
+  local prompt="$@"
   local accept
   local escape
   while test -z $escape
@@ -53,12 +53,12 @@ install () {
     exit 1
   fi
 
-  if ask " * Do you want to enable custom keymap?"
+  if ask " :: Do you want to enable custom keymap?"
   then
     add_rc "call EnableKeymap()"
   fi
 
-  if ask " * Do you want to install vim-airline?"
+  if ask " :: Do you want to install vim-airline?"
   then
     add_plugin "vim-airline/vim-airline"
     add_plugin "vim-airline/vim-airline-themes"
@@ -67,7 +67,7 @@ install () {
     add_rc "let g:airline_theme='badwolf'"
   fi
 
-  if ask " * Do you want to install vim-one theme?"
+  if ask " :: Do you want to install vim-one theme?"
   then
     add_plugin "rakr/vim-one"
     add_rc "let g:one_allow_italics=1"
