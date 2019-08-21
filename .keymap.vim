@@ -6,6 +6,7 @@ if VundleInstalled()
     nnoremap <Leader>> :bnext<CR>
     nnoremap <Leader>< :bprev<CR>
     nnoremap <Leader>t :vs<Bar>:terminal ++curwin<CR>
+    nnoremap <Leader>d :%s/\s\+$//g<CR>
     nmap <Leader>f <Plug>(easymotion-overwin-f)
     nmap <Leader>w <Plug>(easymotion-overwin-w)
   endfunction
