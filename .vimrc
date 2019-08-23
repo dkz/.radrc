@@ -1,93 +1,166 @@
-set nocompatible
-filetype off
+" __   ___       ___
+" \ \ / (_)_ __ | _ \__
+"  \ V /| | '  \|   / _|
+"   \_/ |_|_|_|_|_|_\__|
+"
 
-if !empty(glob('~/.vim/.bashenv.local'))
-  let $BASH_ENV="~/.vim/.bashenv.local"
-elseif !empty(glob('~/.vim/.bashenv'))
-  let $BASH_ENV="~/.vim/.bashenv"
-endif
+" Be Improved.
 
-function VundleInstalled()
-  return !empty(glob('~/.vim/bundle/Vundle.vim'))
-endfunction
+    set nocompatible
 
-if VundleInstalled()
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
+" Enabling plugins through Vundle.
 
-  Plugin 'VundleVim/Vundle.vim'
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tmhedberg/matchit'
-  Plugin 'easymotion/vim-easymotion'
-  Plugin 'kshenoy/vim-signature'
+    filetype off
+    function VundleInstalled()
+      return !empty(glob('~/.vim/bundle/Vundle.vim'))
+    endfunction
 
-  if !empty(glob('~/.vim/.bundlerc.local'))
-    source ~/.vim/.bundlerc.local
-  endif
+    if VundleInstalled()
+      set rtp+=~/.vim/bundle/Vundle.vim
+      call vundle#begin()
 
-  call vundle#end()
-endif
-filetype plugin indent on
+      Plugin 'VundleVim/Vundle.vim'
+      Plugin 'tpope/vim-surround'
+      Plugin 'tpope/vim-repeat'
+      Plugin 'tmhedberg/matchit'
+      Plugin 'easymotion/vim-easymotion'
+      Plugin 'kshenoy/vim-signature'
 
-set autoindent
-set autochdir
-set smartindent
-set relativenumber
-set tabstop=2
-set shiftwidth=2
-set smarttab
-set expandtab
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
-set nobackup
-set noswapfile
-set nowb
-set showmatch
-set magic
-set cmdheight=2
-set laststatus=2
-set foldcolumn=1
-set nowrap
-set hidden
-set background=dark
-set selection=old
-set lazyredraw
+      " Add local machine specific plugins to .bundlerc.local
+      if !empty(glob('~/.vim/.bundlerc.local'))
+        source ~/.vim/.bundlerc.local
+      endif
 
-hi VertSplit ctermbg=LightGray ctermfg=LightGray
-hi FoldColumn ctermbg=LightGray
-hi SignColumn ctermbg=LightGray
-hi SignatureMarkText ctermbg=LightGray
-hi SignatureMarkText ctermfg=Black
-hi SignatureMarkText cterm=bold,underline
+      call vundle#end()
+    endif
+    filetype plugin indent on
 
-set fillchars+=vert:\ 
+" Importing local bashenv definitions such as
+" custom aliases for vim shell commands.
 
-function SwitchColors()
-  if &background == "dark"
-    set background=light
-  else
+    if !empty(glob('~/.vim/.bashenv.local'))
+      let $BASH_ENV="~/.vim/.bashenv.local"
+    elseif !empty(glob('~/.vim/.bashenv'))
+      let $BASH_ENV="~/.vim/.bashenv"
+    endif
+
+" Enable sensible autocompletion for commands
+" intuitive window splitting and indentation.
+
+    set wildmode=longest,list,full
+    set splitright splitbelow
+    set autoindent smartindent
+
+" Automatically chdir to file being opened.
+
+    set autochdir
+
+" Enable relative line numbers for fast navigation.
+
+    set relativenumber
+
+" Set default tab width to 2 symbols, use spaces.
+
+    set tabstop=2
+    set shiftwidth=2
+    set smarttab
+    set expandtab
+
+" Enable incremental search and search highlighting.
+" Disable case matching for search except when uppercase
+" characters are present in the pattern.
+" Enable more intuitive special symbol treatment in
+" pattern engine.
+
+    set incsearch
+    set hlsearch
+    set ignorecase
+    set smartcase
+    set magic
+
+" Briefly highlight opening parenthesis.
+
+    set showmatch
+
+" Do not include newline when going to the 
+" end of the line in visual mode.
+
+    set selection=old
+
+" Set command line height to 2 to preserve last message
+" in the status line.
+
+    set cmdheight=2
+    set laststatus=2
+
+" Disable backup, write backups and swap files,
+" since they are unually irritate version control systems.
+
+    set nobackup
+    set noswapfile
+    set nowb
+
+" When multible buffers are open, vim can lose changes
+" in abandoned buffers if this option is not enabled.
+
+    set hidden
+
+" Vim does not update screen when executing macro
+" or performing long-running operation.
+
+    set lazyredraw
+
+" Minor cosmetic changes that do not affect editing:
+" disable line wrapping, make fold column always visible,
+" explicitly set dark background, tweak default colorscheme.
+
+    set nowrap
+    set foldcolumn=1
     set background=dark
-  endif
-  if exists("*SwitchColorsHook")
-    call SwitchColorsHook(&background)
-  endif
-endfunction
+    hi VertSplit ctermbg=LightGray ctermfg=LightGray
+    hi FoldColumn ctermbg=LightGray
+    hi SignColumn ctermbg=LightGray
+    hi SignatureMarkText ctermbg=LightGray
+    hi SignatureMarkText ctermfg=Black
+    hi SignatureMarkText cterm=bold,underline
+    set fillchars+=vert:\ 
 
-nmap <f2> :call SwitchColors()<CR>
+" If terminal with light theme is used, one can use F2 to
+" switch dark color option off quickly and possibly change theme
+" to a light variant (done by providing SwitchColorHook function).
 
-set splitright
-set splitbelow
+    function SwitchColors()
+      if &background == "dark"
+        set background=light
+      else
+        set background=dark
+      endif
+      if exists("*SwitchColorsHook")
+        call SwitchColorsHook(&background)
+      endif
+    endfunction
 
-set statusline=\ %F%m%r%h\ %w\ (%r%{getcwd()}%h)\%=%y\ %3l:%2c\ \ 
+    nmap <f2> :call SwitchColors()<CR>
 
-set omnifunc=syntaxcomplete#Complete
+" Use custom status line with current working directory (usefull
+" for executing shell commands from vim)
 
-if !empty(glob('~/.vim/.keymap.vim'))
-  source ~/.vim/.keymap.vim
-endif
-if !empty(glob('~/.vim/.vimrc.local'))
-  source ~/.vim/.vimrc.local
-endif
+    set statusline=\ %F%m%r%h\ %w\ (%r%{getcwd()}%h)\%=%y\ %3l:%2c\ \ 
+
+" Enable omnifunc completion by pressing Ctrl-x Ctrl-o
+
+    set omnifunc=syntaxcomplete#Complete
+
+" Include default optional keymap definition.
+
+    if !empty(glob('~/.vim/.keymap.vim'))
+      source ~/.vim/.keymap.vim
+    endif
+
+" Custom configuration can be specified in a ~/.vim/.vimrc.local file
+" with local machine specific tweaks that should not be shared through
+" git repository.
+
+    if !empty(glob('~/.vim/.vimrc.local'))
+      source ~/.vim/.vimrc.local
+    endif
