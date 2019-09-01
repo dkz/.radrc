@@ -82,7 +82,7 @@
 
     set showmatch
 
-" Do not include newline when going to the 
+" Do not include newline when going to the
 " end of the line in visual mode.
 
     set selection=old
@@ -124,6 +124,13 @@
     hi SignatureMarkText ctermfg=Black
     hi SignatureMarkText cterm=bold,underline
     set fillchars+=vert:\ 
+
+" Highlight trailing whitespace characters
+
+    hi TrailingWhitespace ctermbg=DarkGray
+    autocmd ColorScheme * hi TrailingWhitespace ctermbg=DarkGray
+    match TrailingWhitespace /\s\+$/
+    autocmd BufWinLeave * call clearmatches()
 
 " If terminal with light theme is used, one can use F2 to
 " switch dark color option off quickly and possibly change theme
