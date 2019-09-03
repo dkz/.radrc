@@ -48,7 +48,6 @@ install () {
   then
     git -C $HOME/.vim submodule init
     git -C $HOME/.vim submodule update
-    ln -s $HOME/.vim/.vimrc $HOME/.vimrc
   else
     exit 1
   fi
@@ -77,7 +76,7 @@ install () {
     add_rc "endif"
   fi
 
-  vim -c 'PluginInstall' "$HOME/.vimrc"
+  vim -c 'PluginInstall' "$HOME/.vim/vimrc"
 }
 
 install
