@@ -22,11 +22,11 @@ ask () {
 }
 
 add_rc () {
-  echo "$1" >> "$HOME/.vim/.vimrc.local"
+  echo "$1" >> "$HOME/.vim/vimrc.local"
 }
 
 add_plugin () {
-  echo "Plugin '$1'" >> "$HOME/.vim/.bundlerc.local"
+  echo "Plugin '$1'" >> "$HOME/.vim/bundle.local"
 }
 
 install () {

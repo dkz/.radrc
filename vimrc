@@ -26,9 +26,9 @@
       Plugin 'easymotion/vim-easymotion'
       Plugin 'kshenoy/vim-signature'
 
-      " Add local machine specific plugins to .bundlerc.local
-      if !empty(glob('~/.vim/.bundlerc.local'))
-        source ~/.vim/.bundlerc.local
+      " Add local machine specific plugins to bundle.local
+      if !empty(glob('~/.vim/bundle.local'))
+        source ~/.vim/bundle.local
       endif
 
       call vundle#end()
@@ -38,10 +38,10 @@
 " Importing local bashenv definitions such as
 " custom aliases for vim shell commands.
 
-    if !empty(glob('~/.vim/.bashenv.local'))
-      let $BASH_ENV="~/.vim/.bashenv.local"
-    elseif !empty(glob('~/.vim/.bashenv'))
-      let $BASH_ENV="~/.vim/.bashenv"
+    if !empty(glob('~/.vim/bashenv.local'))
+      let $BASH_ENV="~/.vim/bashenv.local"
+    elseif !empty(glob('~/.vim/bashenv'))
+      let $BASH_ENV="~/.vim/bashenv"
     endif
 
 " Enable sensible autocompletion for commands
@@ -160,14 +160,14 @@
 
 " Include default optional keymap definition.
 
-    if !empty(glob('~/.vim/.keymap.vim'))
-      source ~/.vim/.keymap.vim
+    if !empty(glob('~/.vim/keymap.vim'))
+      source ~/.vim/keymap.vim
     endif
 
-" Custom configuration can be specified in a ~/.vim/.vimrc.local file
+" Custom configuration can be specified in a ~/.vim/vimrc.local file
 " with local machine specific tweaks that should not be shared through
 " git repository.
 
-    if !empty(glob('~/.vim/.vimrc.local'))
-      source ~/.vim/.vimrc.local
+    if !empty(glob('~/.vim/vimrc.local'))
+      source ~/.vim/vimrc.local
     endif
