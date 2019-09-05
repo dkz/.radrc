@@ -132,6 +132,10 @@
     match TrailingWhitespace /\s\+$/
     autocmd BufWinLeave * call clearmatches()
 
+" Disable automatic comment insersion
+
+    autocmd BufRead,BufNewFile * setlocal formatoptions-=cro
+
 " If terminal with light theme is used, one can use F2 to
 " switch dark color option off quickly and possibly change theme
 " to a light variant (done by providing SwitchColorHook function).
