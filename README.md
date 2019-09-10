@@ -1,5 +1,5 @@
-# .litrc
-.vimrc that is lit af
+# .Radrc
+Very rad .vimrc with batteries included
 
 ## Bundle installation (requires git)
 Use this shell command to install configuration under ~/.vim with .vimrc symlink
