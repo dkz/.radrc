@@ -6,14 +6,23 @@
 
 " Defines a keymap function to initialize few custom hot keys.
 
-  function Terminal()
-    20 split
-    terminal ++curwin
+  function TerminalOpen()
+    if exists("g:terminal_buffer") && bufloaded(g:terminal_buffer)
+      execute 'buffer' g:terminal_buffer
+    else
+      terminal ++curwin
+      let g:terminal_buffer=winbufnr(0)
+    endif
   endfunction
 
-  function TerminalSplit()
+  function TerminalHSplit()
+    20 split
+    call TerminalOpen()
+  endfunction
+
+  function TerminalVSplit()
     vsplit
-    terminal ++curwin
+    call TerminalOpen()
   endfunction
 
   function EnableKeymap()
@@ -31,8 +40,8 @@
 " <Space>~ use vertial split instead of horizontal.
 " <C-\><C-d> immediatelly stop terminal process and destroy buffer.
 
-    nnoremap <Leader>` :call Terminal()<CR>
-    nnoremap <Leader>~ :call TerminalSplit()<CR>
+    nnoremap <Leader>` :call TerminalHSplit()<CR>
+    nnoremap <Leader>~ :call TerminalVSplit()<CR>
     tnoremap <C-\><C-d> <C-w><C-c><C-\><C-n>:bdelete!<CR>
 
 " <Space>f jump to symbol with help of easymotion plugin.
