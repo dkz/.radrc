@@ -35,10 +35,6 @@
     nnoremap <Leader>~ :call TerminalSplit()<CR>
     tnoremap <C-\><C-d> <C-w><C-c><C-\><C-n>:bdelete!<CR>
 
-" <Space>d delete trailing spaces in current buffer.
-
-    nnoremap <Leader>d :%s/\s\+$//g<CR>:noh<CR>
-
 " <Space>f jump to symbol with help of easymotion plugin.
 
     if VundleInstalled()
