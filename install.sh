@@ -43,7 +43,7 @@ install () {
     exit 1
   fi
 
-  git clone git://github.com/dkz/.litrc $HOME/.vim
+  git clone git://github.com/dkz/.radrc $HOME/.vim
   if test $? -eq 0
   then
     git -C $HOME/.vim submodule init
