@@ -162,11 +162,18 @@
 
     set omnifunc=syntaxcomplete#Complete
 
-" Include default optional keymap definition.
+" Include optional keymaps from pluings directory.
 
-    if !empty(glob('~/.vim/keymap.vim'))
-      source ~/.vim/keymap.vim
-    endif
+    let g:radrc_keymap = []
+    function s:radrc_keymap_enable()
+      for Keymap in g:radrc_keymap
+        call Keymap()
+      endfor
+    endfunction
+
+    function EnableKeymap()
+      autocmd VimEnter * call s:radrc_keymap_enable()
+    endfunction
 
 " Custom configuration can be specified in a ~/.vim/vimrc.local file
 " with local machine specific tweaks that should not be shared through
