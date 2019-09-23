@@ -30,7 +30,8 @@
       call s:term_open()
     endfunction
 
-" <Space>` open terminal in a split buffer.
+" (normal) <Space>` open terminal in a split buffer.
+" (visual) <Space>` send selection to terminal buffer.
 " <Space>~ use vertial split instead of horizontal.
 " <C-\><C-d> immediatelly stop terminal process and destroy buffer.
 
