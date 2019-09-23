@@ -5,11 +5,18 @@
 "
 
     function s:term_open()
-      if exists("g:terminal_buffer") && bufloaded(g:terminal_buffer)
-        execute 'buffer' g:terminal_buffer
+      let terms=term_list()
+      if l:terms != []
+        execute 'buffer' l:terms[0]
       else
         terminal ++curwin
-        let g:terminal_buffer=winbufnr(0)
+      endif
+    endfunction
+
+    function s:term_paste()
+      let terms=term_list()
+      if l:terms != []
+        call term_sendkeys(l:terms[0], @")
       endif
     endfunction
 
@@ -30,6 +37,7 @@
     function s:init_keymap()
       nnoremap <silent> <Leader>` :call <sid>term_hsplit()<cr>
       nnoremap <silent> <Leader>~ :call <sid>term_vsplit()<cr>
+      vnoremap <silent> <Leader>` y:call <sid>term_paste()<cr>
       tnoremap <silent> <C-\><C-d> <C-w><C-c><C-\><C-n>:bdelete!<cr>
     endfunction
 
