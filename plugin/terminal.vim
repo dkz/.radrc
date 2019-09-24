@@ -16,7 +16,9 @@
     function s:term_paste()
       let terms=term_list()
       if l:terms != []
-        call term_sendkeys(l:terms[0], @")
+        "^J as part of input can mess certain terminal applications
+        let input=substitute(@", "\n", "\r", "g")
+        call term_sendkeys(l:terms[0], l:input)
       endif
     endfunction
 
