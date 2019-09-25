@@ -2,7 +2,7 @@
 Very rad .vimrc with batteries included
 
 ## Bundle installation (requires git)
-Use this shell command to install configuration under ~/.vim with .vimrc symlink
+Use this shell command to install configuration under ~/.vim
 ```
 curl --location https://github.com/dkz/.radrc/raw/master/install.sh | sh
 ```

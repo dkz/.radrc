@@ -7,7 +7,7 @@ ask () {
   while test -z $escape
   do
     printf "$prompt "
-    read -p "[yn] " accept
+    read -p "[yn] " accept </dev/tty
     case $accept in
       "y")
         escape=0
@@ -66,7 +66,12 @@ install () {
     add_rc "let g:airline_theme='badwolf'"
   fi
 
-  if ask " :: Do you want to install vim-one theme?"
+  if ask " :: Do you want to install vim-colorschemes?"
+  then
+    add_plugin "flazz/vim-colorschemes"
+  fi
+
+  if ask " :: Do you want to install and set vim-one theme?"
   then
     add_plugin "rakr/vim-one"
     add_rc "let g:one_allow_italics=1"
