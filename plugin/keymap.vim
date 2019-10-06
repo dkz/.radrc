@@ -25,6 +25,4 @@
 
     endfunction
 
-    if has("lambda")
-      call add(g:radrc_keymap, { -> s:init_keymap() })
-    endif
+    call add(g:radrc_keymap, function("<SID>init_keymap"))

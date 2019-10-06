@@ -1,7 +1,7 @@
-"  _____                   _
-" |_   _|__ _ _ _ __  __ _(_)_ __
-"   | |/ -_) '_| '  \ \ V / | '  \
-"   |_|\___|_| |_|_|_(_)_/|_|_|_|_|
+"  _____              _           _      _
+" |_   _|__ _ _ _ __ (_)_ _  __ _| |__ _(_)_ __
+"   | |/ -_) '_| '  \| | ' \/ _` | |\ V / | '  \
+"   |_|\___|_| |_|_|_|_|_||_\__,_|_(_)_/|_|_|_|_|
 "
 
     function s:term_open()
@@ -44,6 +44,6 @@
       tnoremap <silent> <C-\><C-d> <C-w><C-c><C-\><C-n>:bdelete!<cr>
     endfunction
 
-    if has("lambda")
-      call add(g:radrc_keymap, { -> s:init_keymap() })
+    if has("terminal")
+      call add(g:radrc_keymap, function("<SID>init_keymap"))
     endif
