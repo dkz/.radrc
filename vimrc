@@ -130,6 +130,7 @@
     hi TrailingWhitespace ctermbg=DarkGray
     autocmd ColorScheme * hi TrailingWhitespace ctermbg=DarkGray
     autocmd BufEnter * match TrailingWhitespace /\s\+$/
+    autocmd WinEnter * match TrailingWhitespace /\s\+$/
     autocmd BufWinLeave * call clearmatches()
 
 " Disable automatic comment insersion
