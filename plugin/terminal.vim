@@ -44,4 +44,6 @@
       tnoremap <silent> <C-\><C-d> <C-w><C-c><C-\><C-n>:bdelete!<cr>
     endfunction
 
-    call add(g:radrc_keymap, { -> s:init_keymap() })
+    if has("lambda")
+      call add(g:radrc_keymap, { -> s:init_keymap() })
+    endif

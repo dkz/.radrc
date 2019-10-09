@@ -25,4 +25,6 @@
 
     endfunction
 
-    call add(g:radrc_keymap, { -> s:init_keymap() })
+    if has("lambda")
+      call add(g:radrc_keymap, { -> s:init_keymap() })
+    endif
