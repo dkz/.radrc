@@ -128,7 +128,7 @@
 " Highlight trailing whitespace characters
 
     hi TrailingWhitespace ctermbg=DarkGray
-    autocmd ColorScheme * hi TrailingWhitespace ctermbg=DarkGray
+    autocmd ColorScheme * hi TrailingWhitespace ctermbg=DarkGray guibg=darkgray
     autocmd BufEnter * match TrailingWhitespace /\s\+$/
     autocmd WinEnter * match TrailingWhitespace /\s\+$/
     autocmd BufWinLeave * call clearmatches()
