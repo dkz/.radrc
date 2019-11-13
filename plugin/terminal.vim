@@ -7,7 +7,7 @@
     function s:term_open()
       let terms=term_list()
       if l:terms != []
-        execute 'buffer' l:terms[0]
+        execute 'buffer' l:terms[-1]
       else
         terminal ++curwin
       endif
@@ -34,14 +34,18 @@
 
 " (normal) <Space>` open terminal in a split buffer.
 " (visual) <Space>` send selection to terminal buffer.
-" <Space>~ use vertial split instead of horizontal.
-" <C-\><C-d> immediatelly stop terminal process and destroy buffer.
+" (normal) <Space>~ use vertial split instead of horizontal.
+" (terminal) <C-\><C-d> immediatelly stop terminal process and destroy buffer.
+" (terminal) <C-\><C-t> jump to previous open tab
+" (terminal) <C-\><C-T> just to next open tab
 
     function s:init_keymap()
       nnoremap <silent> <Leader>` :call <sid>term_hsplit()<cr>
       nnoremap <silent> <Leader>~ :call <sid>term_vsplit()<cr>
       vnoremap <silent> <Leader>` y:call <sid>term_paste()<cr>
       tnoremap <silent> <C-\><C-d> <C-w><C-c><C-\><C-n>:bdelete!<cr>
+      tnoremap <silent> <C-\><C-T> <C-w>:tabnext<cr>
+      tnoremap <silent> <C-\><C-t> <C-w>:tabprevious<cr>
     endfunction
 
     if has("terminal")
