@@ -20,7 +20,7 @@
       endif
 
       if a:0 " Visual
-        execute "normal! gvy"
+        execute "y"
       elseif a:type == 'line'
         execute "normal! '[V']y"
       else
@@ -51,6 +51,7 @@
 
     function s:init_keymap()
       nnoremap <silent> <Leader>` :set opfunc=<sid>term_paste_op<cr>g@
+      vnoremap <silent> <Leader>` :call <sid>term_paste_op(visualmode(), "visual")<cr>
       nnoremap <silent> <Leader>t :call <sid>term_hsplit()<cr>
       nnoremap <silent> <Leader>T :call <sid>term_vsplit()<cr>
       tnoremap <silent> <C-\><C-d> <C-w><C-c><C-\><C-n>:bdelete!<cr>
