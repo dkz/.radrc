@@ -4,7 +4,7 @@
 syn match extSchemeLang "#!chezscheme"
 
 syn keyword extSchemeSyntax library export import
-syn keyword extSchemeSyntax let-values define-values
+syn keyword extSchemeSyntax define-values let-values let*-values
 syn keyword extSchemeSyntax case-lambda
 syn keyword extSchemeSyntax when unless guard
 syn keyword extSchemeSyntax match-case match-lambda
@@ -46,6 +46,7 @@ hi def link extSchemeBox Type
 
 set lispwords+=library
 set lispwords+=let-values
+set lispwords+=let*-values
 set lispwords+=module
 set lispwords+=syntax-rules
 set lispwords+=syntax-case
