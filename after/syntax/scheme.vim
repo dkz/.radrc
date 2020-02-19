@@ -8,7 +8,7 @@ syn keyword extSchemeSyntax define-values let-values let*-values
 syn keyword extSchemeSyntax case-lambda
 syn keyword extSchemeSyntax when unless guard
 syn keyword extSchemeSyntax match-case match-lambda
-syn keyword extSchemeSyntax assoc-let assoc-bind dispatcher
+syn keyword extSchemeSyntax assoc-let assoc-bind assoc-lambda dispatcher
 
 syn keyword extSchemeSyntax syntax-case
 
@@ -53,4 +53,5 @@ set lispwords+=syntax-case
 set lispwords+=match-case
 set lispwords+=assoc-let
 set lispwords+=assoc-bind
+set lispwords+=assoc-lambda
 set lispwords+=guard
