@@ -7,17 +7,13 @@ syn keyword extSchemeSyntax library export import
 syn keyword extSchemeSyntax define-values let-values let*-values
 syn keyword extSchemeSyntax case-lambda
 syn keyword extSchemeSyntax when unless guard
-syn keyword extSchemeSyntax match-case match-lambda
-syn keyword extSchemeSyntax assoc-let assoc-bind assoc-lambda dispatcher
-
+syn keyword extSchemeSyntax match match-lambda
 syn keyword extSchemeSyntax syntax-case
 
 syn keyword extSchemeExtSyntax module
 syn keyword extSchemeExtFunc format
 
 syn keyword extSchemeFunc box unbox set-box! box?
-
-syn keyword extSchemeFunc conses
 
 syn match extSchemeOther "#%[-a-z!$%&*/:<=>?^_~0-9+.@#%]\+"
 syn match extSchemeOther "|[^|]\+|"
@@ -50,8 +46,5 @@ set lispwords+=let*-values
 set lispwords+=module
 set lispwords+=syntax-rules
 set lispwords+=syntax-case
-set lispwords+=match-case
-set lispwords+=assoc-let
-set lispwords+=assoc-bind
-set lispwords+=assoc-lambda
+set lispwords+=match
 set lispwords+=guard
