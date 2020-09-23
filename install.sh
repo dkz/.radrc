@@ -82,6 +82,8 @@ install () {
   fi
 
   vim -c 'PluginInstall' "$HOME/.vim/vimrc"
+  # Cleanup messed control sequences after calling vim
+  reset
 }
 
 install
