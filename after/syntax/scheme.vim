@@ -29,8 +29,8 @@ syn region extSchemeUnquote matchgroup=Delimiter start="#,(" end=")" contains=AL
 syn region extSchemeUnquote matchgroup=Delimiter start="#,@(" end=")" contains=ALL
 syn region extSchemeUnquote matchgroup=Delimiter start="#,\[" end="\]" contains=ALL
 syn region extSchemeUnquote matchgroup=Delimiter start="#,@\[" end="\]" contains=ALL
-syn region extSchemeQuoted matchgroup=Delimiter start="#['`]" end=![ \t()\[\]";]!me=e-1 contains=ALL
-syn region extSchemeQuoted matchgroup=Delimiter start="#['`](" matchgroup=Delimiter end=")" contains=ALL
+syn region extSchemeQuoted matchgroup=Delimiter start="#['`]" end=![ \t()\[\]";]!me=e-1 contains=@schemeSyntaxCluster
+syn region extSchemeQuoted matchgroup=Delimiter start="#['`](" matchgroup=Delimiter end=")" contains=@schemeSyntaxCluster
 
 hi def link extSchemeLang	PreProc
 hi def link extSchemeSyntax	Statement
