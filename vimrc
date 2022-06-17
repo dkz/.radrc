@@ -25,6 +25,7 @@
       Plugin 'tmhedberg/matchit'
       Plugin 'easymotion/vim-easymotion'
       Plugin 'kshenoy/vim-signature'
+      Plugin 'ctrlpvim/ctrlp.vim'
 
       " Add local machine specific plugins to bundle.local
       if !empty(glob('~/.vim/bundle.local'))

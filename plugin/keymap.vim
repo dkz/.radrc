@@ -15,7 +15,7 @@
 " <Space>b show list of buffers and add :b prompt to easily
 " jump to a desired buffer.
 
-      nnoremap <Leader>b :buffers<CR>:b<Space>
+      nnoremap <Leader>b :CtrlPBuffer<CR>
 
 " <Space>f jump to symbol with help of easymotion plugin.
 
