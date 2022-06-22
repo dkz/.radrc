@@ -17,6 +17,10 @@
 
       nnoremap <Leader>b :CtrlPBuffer<CR>
 
+" <Space>l change working directory to current file's location.
+
+      nnoremap <Leader>l :lcd %:p:h<CR>
+
 " <Space>f jump to symbol with help of easymotion plugin.
 
       if VundleInstalled()

@@ -52,10 +52,6 @@
     set splitright splitbelow
     set autoindent smartindent
 
-" Automatically chdir to file being opened.
-
-    set autochdir
-
 " Enable relative line numbers for fast navigation.
 
     set relativenumber
