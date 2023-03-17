@@ -27,6 +27,32 @@
         nmap <Leader>f <Plug>(easymotion-overwin-f)
       endif
 
+" <Space>F fuzzy find a file by name in the current working directory
+" <Space>B fuzzy find a buffer by name
+" <Space>L fuzzy search line contents in open buffers
+
+      if g:loaded_fzf
+        nnoremap <Leader>F :Files .<CR>
+        nnoremap <Leader>B :Buffers<CR>
+        nnoremap <Leader>L :Lines<CR>
+      endif
+
+" <Space>ad show full checker/linter message in a temporary window
+" <Space>ah print brief information about the symbol under cursor
+" <Space>an jump to next checker/linter error or warning
+" <Space>an jump to previous checker/linter error or warning
+" <Space>al dump all errors and warnings into the vim quick fix list
+" <Space>aq disable ALE in the current buffer
+
+      if g:loaded_ale
+        nnoremap <Leader>ad :ALEDetail<CR>
+        nnoremap <Leader>ah :ALEHover<CR>
+        nnoremap <Leader>an :ALENext<CR>
+        nnoremap <Leader>ap :ALEPrevious<CR>
+        nnoremap <Leader>al :ALEPopulateLocList<CR>
+        nnoremap <Leader>aq :ALEDisableBuffer<CR>
+      endif
+
     endfunction
 
     call add(g:radrc_keymap, function("<SID>init_keymap"))
