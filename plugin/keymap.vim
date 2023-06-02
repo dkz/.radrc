@@ -21,6 +21,10 @@
 
       nnoremap <Leader>l :lcd %:p:h<CR>
 
+" <Space>n navigate to current file's location in netrw
+
+      nnoremap <Leader>n :e %:p:h<CR>
+
 " <Space>f jump to symbol with help of easymotion plugin.
 
       if VundleInstalled()
