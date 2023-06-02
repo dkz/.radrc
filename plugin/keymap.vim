@@ -35,7 +35,7 @@
 " <Space>B fuzzy find a buffer by name
 " <Space>L fuzzy search line contents in open buffers
 
-      if g:loaded_fzf
+      if exists("g:loaded_fzf") && g:loaded_fzf
         nnoremap <Leader>F :Files .<CR>
         nnoremap <Leader>B :Buffers<CR>
         nnoremap <Leader>L :Lines<CR>
@@ -48,7 +48,7 @@
 " <Space>al dump all errors and warnings into the vim quick fix list
 " <Space>aq disable ALE in the current buffer
 
-      if g:loaded_ale
+      if exists("g:loaded_ale") && g:loaded_ale
         nnoremap <Leader>ad :ALEDetail<CR>
         nnoremap <Leader>ah :ALEHover<CR>
         nnoremap <Leader>an :ALENext<CR>
