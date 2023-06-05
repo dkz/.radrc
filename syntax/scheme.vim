@@ -87,6 +87,7 @@ syn keyword schemeSyntaxSyntax define-syntax
 syn keyword schemeSyntaxSyntax let-syntax
 syn keyword schemeSyntaxSyntax letrec-syntax
 syn keyword schemeSyntaxSyntax syntax-rules
+syn keyword schemeSyntaxSyntax syntax-case
 
 syn keyword schemeSyntax =>
 syn keyword schemeSyntax and
@@ -119,6 +120,7 @@ syn keyword schemeSyntax unless
 syn keyword schemeSyntax unquote
 syn keyword schemeSyntax unquote-splicing
 syn keyword schemeSyntax when
+syn keyword schemeSyntax match
 
 syn keyword schemeFunction *
 syn keyword schemeFunction +
