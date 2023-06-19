@@ -46,7 +46,7 @@ install () {
   git clone https://github.com/dkz/.radrc "$HOME/.vim"
   if test "$?" -eq 0
   then
-    git -C "l$HOME/.vim" submodule init
+    git -C "$HOME/.vim" submodule init
     git -C "$HOME/.vim" submodule update
   else
     exit 1
