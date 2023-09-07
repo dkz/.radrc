@@ -50,15 +50,26 @@
       call term_sendkeys(l:terms[-1], "cd " . expand("%:p:h") . "\r")
     endfunction
 
+    function s:shell_preview(command)
+      let command = join(map(split(a:command), 'expand(v:val)'))
+      silent! exe 'noautocmd vnew '.fnameescape(command)
+      setlocal buftype=nowrite bufhidden=wipe nobuflisted noswapfile nowrap nonumber norelativenumber
+      silent! exe 'silent %!'.command
+      silent! redraw
+    endfunction
+    command! -complete=shellcmd -nargs=+ Shell call s:shell_preview(<q-args>)
+
 " (operator) <Space>` paste into terminal, accessible in both visual/normal.
 " (normal) <Space>t open terminal in a split buffer.
 " (normal) <Space>T use vertial split instead of horizontal.
 " (normal) <Space>C insert cd command jumping to location of current file
+" (normal) <Space>! prompt a shell command and show the result in a preview window
 " (terminal) <C-\><C-d> immediatelly stop terminal process and destroy buffer.
 " (terminal) <C-\><C-t> jump to previous open tab
 " (terminal) <C-\><C-T> just to next open tab
 
     function s:init_keymap()
+      nnoremap <leader>! :Shell<space>
       nnoremap <silent> <Leader>` :set opfunc=<sid>term_paste_op<cr>g@
       vnoremap <silent> <Leader>` :call <sid>term_paste_op(visualmode(), "visual")<cr>
       nnoremap <silent> <Leader>t :call <sid>term_hsplit()<cr>
